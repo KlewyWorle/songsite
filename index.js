@@ -10,21 +10,24 @@ const volumeSlider = document.getElementById("volume")
 let song_rapture = new Audio("rapture.mp3")
 let song_metamorphosis = new Audio("meta.mp3")
 
+
+
 playButton.onclick = () =>
 {
     song_rapture.play();
-    //song_rapture.volume = 0.8;
+    song_rapture.volume = 0.5;
 }
 pauseButton.onclick = () =>
 {
-    song_rapture .pause();
+    song_rapture.pause();
+    
 }
 
 
 playButton2.onclick = () =>
 {
     song_metamorphosis.play();
-    //song_metamorphosis.volume = 0.8;
+    song_metamorphosis.volume = 0.5;
 }
 pauseButton2.onclick = () =>
 {
