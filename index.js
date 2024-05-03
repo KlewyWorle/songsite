@@ -1,43 +1,31 @@
-const playButton = document.getElementById("play-btn")
-const pauseButton = document.getElementById("stop-btn")
-
-const playButton2 = document.getElementById("play-btn2")
-const pauseButton2 = document.getElementById("stop-btn2")
-
 const volumeSlider = document.getElementById("volume")
 
 
-let song_rapture = new Audio("rapture.mp3")
-let song_metamorphosis = new Audio("meta.mp3")
-
-
-
-playButton.onclick = () =>
-{
-    song_rapture.play();
-    song_rapture.volume = 0.5;
-}
-pauseButton.onclick = () =>
-{
-    song_rapture.pause();
-    
+let rapture = new Audio("rapture.mp3")
+let meta = new Audio("meta.mp3")
+let allgirls = new Audio("allgirls.mp3")
+let songs = {
+    "rapture": rapture,
+    "meta" : meta,
+    "allgirls" : allgirls
 }
 
-
-playButton2.onclick = () =>
+document.addEventListener("click", (evnt) =>
 {
-    song_metamorphosis.play();
-    song_metamorphosis.volume = 0.5;
-}
-pauseButton2.onclick = () =>
-{
-    song_metamorphosis.pause();
-}
+    if(songs[evnt.target.id].paused)
+    {
+        songs[evnt.target.id].play();
+    }
+    else
+    {
+        songs[evnt.target.id].pause();
+    }
+});
 
-
-function ChangeVolume()
-{
-    song_rapture.volume = volumeSlider.value / 100;
-    song_metamorphosis.volume = volumeSlider.value / 100;
-}
+function ChangeVolume() {
+    const volume = volumeSlider.value / 100; // Normalize volume to 0-1 range
+    for (const song in songs) {
+      songs[song].volume = volume;
+    }
+  }
 

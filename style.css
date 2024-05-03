@@ -3,7 +3,7 @@ body
     background: rgb(62,12,64);
     background: linear-gradient(90deg, rgba(62,12,64,1) 0%, rgba(170,9,127,1) 79%);
 }
-.container1 {
+.container {
     background-color: white;
     width: 250px;
     height: 50%;
@@ -17,7 +17,7 @@ button
 {
     background-color: #cb184e;
     color: black;
-    margin: 20px;
+    margin: 20px 30%;
     font-family:monospace;
     font-weight: 700;
     width: 80px;
@@ -32,15 +32,6 @@ button
     font-weight: 100;
     font-size: 30px;
     margin: 20px 40px;
-}
-.container2 {
-    background-color: white;
-    width: 250px;
-    height: 50%;
-    margin: 100px auto;  
-    padding: 30px 50px 40px;
-    position: relative;
-    border-radius: 20px;
 }
 .slider
 {
